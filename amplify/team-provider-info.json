@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hippie-dev-215727-authRole",
+      "UnauthRoleArn": "arn:aws:iam::077374868695:role/amplify-hippie-dev-215727-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::077374868695:role/amplify-hippie-dev-215727-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hippie-dev-215727-deployment",
+      "UnauthRoleName": "amplify-hippie-dev-215727-unauthRole",
+      "StackName": "amplify-hippie-dev-215727",
+      "StackId": "arn:aws:cloudformation:us-east-1:077374868695:stack/amplify-hippie-dev-215727/5a92bba0-707e-11ee-87d1-1297fc5b86dd",
+      "AmplifyAppId": "d33m6u6vdize7c"
+    },
+    "categories": {
+      "auth": {
+        "hippie1f28f59c": {}
+      }
+    }
+  }
+}

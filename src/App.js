@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { Amplify, Auth } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import awsconfig from './aws-exports';
 
-function App() {
+import '@aws-amplify/ui-react/styles.css'; // Import the default styling
+
+Amplify.configure(awsconfig);
+
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser()
+      .then((user) => {
+        setUser(user);
+      })
+      .catch(() => {
+        setUser(null);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Welcome to the Blog, {user ? user.username : 'Guest'}!</p>
+        {/* Add your blog content here */}
       </header>
     </div>
   );
-}
+};
 
-export default App;
+export default withAuthenticator(App);
